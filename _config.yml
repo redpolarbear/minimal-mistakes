@@ -6,7 +6,7 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-locale                   : "en-US"
+locale                   : "en-CA"
 title                    : "My Tech Notes and Projects"
 title_separator          : "-"
 name                     : "Red Polarbear"
@@ -48,7 +48,7 @@ atom_feed:
   path                   : # blank (default) uses feed.xml
 
 # SEO Related
-google_site_verification :
+google_site_verification : "hlArndtjRkRQRWymGxsBc9Zk6nbTR7wnFN0X6Bpqx6k"
 bing_site_verification   :
 alexa_site_verification  :
 yandex_site_verification :
@@ -70,9 +70,9 @@ social:
 
 # Analytics
 analytics:
-  provider               : false # false (default), "google", "google-universal", "custom"
+  provider               : "google-universal" # false (default), "google", "google-universal", "custom"
   google:
-    tracking_id          :
+    tracking_id          : "UA-87669636-1"
 
 
 # Site Author
@@ -81,7 +81,7 @@ author:
   avatar           : "/assets/images/polar_bear_avatar.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Just another boring, changeable, emotional, computer GEEK."
   location         : "Vancouver, BC Canada"
-  email            :
+  email            : "mrredpolarbear@gmail.com"
   uri              : "https://redpolarbear.github.io"
   bitbucket        :
   codepen          :
@@ -89,8 +89,8 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           :
-  google_plus      :
+  github           : "redpolarbear"
+  google_plus      : 
   keybase          :
   instagram        :
   lastfm           :
