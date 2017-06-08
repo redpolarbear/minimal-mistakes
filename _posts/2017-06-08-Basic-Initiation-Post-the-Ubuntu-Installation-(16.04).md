@@ -1,4 +1,10 @@
-# Basic Initiation Post the Ubuntu First Installation (16.04)
+---
+title: Basic Initiation Post the Ubuntu First Installation (16.04)
+date: 2017-06-08
+categories: [System Administrator]
+tags: [linux, network, root, user]
+---
+
 
 ## How To Create a Sudo User on Ubuntu
 1. Login to the server as the user created during the installation;
