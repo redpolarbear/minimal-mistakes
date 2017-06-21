@@ -16,3 +16,5 @@ tags: [Windows, Exchange, user]
 5. Click **"Set up an automatic reply message"**
 6. Do whatever you wanna input for this user, just the same as the setup in the Outlook - OOF Window
 7. Done
+
+Refer to: [How To Set Out-Of-Office (OOF) Message For Another User Using Exchange Control Panel…](https://cloudiffic.com/how-to-set-out-of-office-oof-message/)
