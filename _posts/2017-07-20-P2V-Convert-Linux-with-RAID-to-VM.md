@@ -37,9 +37,9 @@ As I mentioned above, I need to manually set up the volumes in the new VM. After
 /dev/sdd1   //the swap parition in the original OS
 ```
 
-1. Boot up from the CentOS 5 installation media and enter the *rescue mode* by inputting `linux rescue` on the startup screen. Again, because of the reason above, the rescue mode will fail to find the current OS in the disk. It's OK. Leave it for a while and will be fixed in the next steps.
+- Boot up from the CentOS 5 installation media and enter the *rescue mode* by inputting `linux rescue` on the startup screen. Again, because of the reason above, the rescue mode will fail to find the current OS in the disk. It's OK. Leave it for a while and will be fixed in the next steps.
 
-2. Re-mount the disks and change the `fstab` and `grub`, because the *RAID* has been broken after the conversion but the `fstab` and the `grub` still contained and pointed to the *RAID* disk in the original system configuration.
+- Re-mount the disks and change the `fstab` and `grub`, because the *RAID* has been broken after the conversion but the `fstab` and the `grub` still contained and pointed to the *RAID* disk in the original system configuration.
 
 ```js
 #mkdir /mnt/root
@@ -52,7 +52,7 @@ As I mentioned above, I need to manually set up the volumes in the new VM. After
 #chroot /mnt/root
 ```
 
-3. Change the `grub` and `fstab` mark the boot flag for the boot partition.
+- Change the `grub` and `fstab` mark the boot flag for the boot partition.
 
 ```js
 #cd /boot/grub
@@ -67,7 +67,7 @@ As I mentioned above, I need to manually set up the volumes in the new VM. After
 //Save and exit
 ```
 
-4. Set the *boot* flag on the boot partition. Reboot the system and enter the *rescue* mode again. This time the boot program can detect the OS and put it into the `/mnt/sysimage`.
+- Set the *boot* flag on the boot partition. Reboot the system and enter the *rescue* mode again. This time the boot program can detect the OS and put it into the `/mnt/sysimage`.
 
 ```js
 #mount --bind /proc /mnt/sysimage/proc
@@ -80,7 +80,7 @@ As I mentioned above, I need to manually set up the volumes in the new VM. After
 //press 'x' to save and exit
 ```
 
-5. Create the new *initrd* by `mkinitrd`.
+- Create the new *initrd* by `mkinitrd`.
 
 ```js
 #cd /boot
@@ -89,8 +89,7 @@ As I mentioned above, I need to manually set up the volumes in the new VM. After
 //if the mkinitrd failed, try the other verion of the kernel which was existed in the /boot.
 ```
 
-6. Eject the ISO file and reboot the VM from the HDD.
-
+- Eject the ISO file and reboot the VM from the HDD.
 
 Till now, all the necessary operation has been completed and the system could be boot up as before. All the service will be running and up in the VM.
 
