@@ -43,41 +43,56 @@ As I mentioned above, I need to manually set up the volumes in the new VM. After
 
 ```js
 #mkdir /mnt/root
-#mkdir /mnt/root/boot
 
-#mount /dev/sda1 /mnt/root
-#mount /dev/sdb1 /mnt/root/boot
-#mount --bind /dev /mnt/root/dev
+#mount /dev/sdb1 /mnt/root
 
 #chroot /mnt/root
 ```
 
-- Change the `grub` and `fstab` mark the boot flag for the boot partition.
+- Change the `fstab` and reboot
 
 ```js
-#cd /boot/grub
-#vi grub.conf
-//Change the original root=/dev/md1 to the current `root=/dev/sdb1`.
-//Save and exit
 #cd /etc
 #vi fstab
 //Change the original /dev/md0 (/boot) to the current /dev/sda1.
 //Change the original /dev/md1 (/) to the current /dev/sdb1.
 //Change the swap parition to the current /dev/sdc1 and /dev/sdd1.
 //Save and exit
+//Reboot
 ```
 
-- Set the *boot* flag on the boot partition. Reboot the system and enter the *rescue* mode again. This time the boot program can detect the OS and put it into the `/mnt/sysimage`.
+- Change the `grub` and mark the boot flag for the boot partition.
+
+```js
+#cd /boot/grub
+#vi grub.conf
+//Change the original 'root=/dev/md1' to the current 'root=/dev/sdb1'.
+//Append the parameter - 'nodmraid' to the 'kernel' line.
+//Save and exit
+
+#fdisk /dev/sda
+//Press 'a' to set the boot flag.
+//Press '1' to set the number of the boot partition
+//Press 'w' to save and exit
+#fdisk -l
+//Verify that there is one '*' flag on Boot for /dev/sda1
+
+//Reboot
+```
+
+- Reboot from live CD again and enter the *rescue* mode again. The startup wizard could successfully mount the original system in the `/mnt/sysimage`.
 
 ```js
 #mount --bind /proc /mnt/sysimage/proc
 #mount --bind /dev /mnt/sysimage/dev
 #mount --bind /sys /mnt/sysimage/sys
 #chroot /mnt/sysimage
+```
 
-#fdisk /dev/sda1
-//press 'a' to set the boot flag.
-//press 'x' to save and exit
+- Re-install the GRUB
+
+```js
+#grub-install /dev/sda
 ```
 
 - Create the new *initrd* by `mkinitrd`.
@@ -89,7 +104,7 @@ As I mentioned above, I need to manually set up the volumes in the new VM. After
 //if the mkinitrd failed, try the other verion of the kernel which was existed in the /boot.
 ```
 
-- Eject the ISO file and reboot the VM from the HDD.
+- Eject the ISO file and reboot the VM from the local HDD.
 
 Till now, all the necessary operation has been completed and the system could be boot up as before. All the service will be running and up in the VM.
 
