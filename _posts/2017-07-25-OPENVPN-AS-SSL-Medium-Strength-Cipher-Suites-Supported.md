@@ -1,5 +1,5 @@
 ---
-title: OpenVPN AS: SSL Medium Strength Cipher Suites Supported
+title: OpenVPN AS - SSL Medium Strength Cipher Suites Supported
 date: 2017-07-25
 categories: [System Administrator]
 tags: [linux, SSL, OpenVPN AS]

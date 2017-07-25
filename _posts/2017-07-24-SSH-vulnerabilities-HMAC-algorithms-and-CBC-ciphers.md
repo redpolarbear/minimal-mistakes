@@ -1,5 +1,5 @@
 ---
-title: SSH vulnerabilities: HMAC algorithms and CBC ciphers
+title: SSH vulnerabilities - HMAC algorithms and CBC ciphers
 date: 2017-07-24
 categories: [System Administrator]
 tags: [linux, ssh]
