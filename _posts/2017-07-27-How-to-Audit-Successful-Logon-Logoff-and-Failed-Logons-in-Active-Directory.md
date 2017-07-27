@@ -2,7 +2,7 @@
 title: How to Audit Successful Logon/Logoff and Failed Logons in Active Directory
 date: 2017-07-27
 categories: [System Administrator]
-tags: [linux, Windows AD, GPO]
+tags: [Windows AD, GPO]
 ---
 
 Refer to: [How to Audit Successful Logon/Logoff and Failed Logons in Active Directory](https://www.lepide.com/blog/audit-successful-logon-logoff-and-failed-logons-in-activedirectory/)
@@ -24,6 +24,23 @@ Refer to: [How to Audit Successful Logon/Logoff and Failed Logons in Active Dire
     - run `gpupdate /force` to update the GPO on the client.
 - Done
 - Then you may find out the audit event from the **Event Viewer** - **Security**.
+
+### Event ID for the reference
+- Audit Logon Events
+    - 4624
+    - 4625
+    - 4648
+    - 4634
+    - 4647
+    - 4672
+    - 4778
+- Audit Account Logon Events
+    - 4768
+    - 4769
+    - 4770
+    - 4771
+    - 4774
+    - 4776
 
 Reference:
 - [Audit Policies](https://technet.microsoft.com/en-us/library/cc730601(v=ws.11).aspx)
