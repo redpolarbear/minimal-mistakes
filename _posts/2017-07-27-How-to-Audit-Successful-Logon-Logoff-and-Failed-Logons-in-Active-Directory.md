@@ -24,3 +24,11 @@ Refer to: [How to Audit Successful Logon/Logoff and Failed Logons in Active Dire
     - run `gpupdate /force` to update the GPO on the client.
 - Done
 - Then you may find out the audit event from the **Event Viewer** - **Security**.
+
+Reference:
+- [Audit Policies](https://technet.microsoft.com/en-us/library/cc730601(v=ws.11).aspx)
+- [Managing Security Auditing](https://technet.microsoft.com/en-us/library/cc771475(v=ws.11).aspx)
+- [What are the different Windows Logon Types that can show up in the Windows event log?](http://windowsitpro.com/systems-management/q-what-are-different-windows-logon-types-can-show-windows-event-log)
+- [Define or Modify Auditing Policy Settings for an Event Category](https://technet.microsoft.com/en-us/library/cc771475(v=ws.11).aspx)
+- [Apply or Modify Auditing Policy Settings for a Local File or Folder](https://technet.microsoft.com/en-us/library/cc771070(v=ws.11).aspx)
+- [Advanced Security Settings Properties Page - Auditing Tab](https://technet.microsoft.com/en-us/library/cc753927(v=ws.11).aspx)
